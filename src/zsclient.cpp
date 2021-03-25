@@ -275,8 +275,8 @@ namespace zsync2 {
 
                 // if interested in headers only, download 1 kiB chunks until end of zsync header is found
                 if (headersOnly && zSyncFileStoredLocallyAlready) {
-                    static const auto chunkSize = 1024;
-                    unsigned long currentChunk = 0;
+                    static const off_t chunkSize = 1024;
+                    off_t currentChunk = 0;
 
                     // download a chunk at a time
                     while (true) {
